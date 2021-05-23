@@ -2,8 +2,8 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {options} from './screenOptions';
-import {DummyScreen1} from '../screens/DummyScreen1';
-import {DummyScreen2} from '../screens/DummyScreen2';
+import {ScreenDummy1} from '../screens/ScreenDummy1';
+import {ScreenDummy2} from '../screens/ScreenDummy2';
 
 const StackNav = createStackNavigator();
 
@@ -12,13 +12,13 @@ export const RouteManager = props => {
     <NavigationContainer>
       <StackNav.Navigator>
         <StackNav.Screen
-          name="DummyScreen1"
-          component={DummyScreen1}
+          name="ScreenDummy1"
+          component={ScreenDummy1}
           options={{...options, headerShown: false}}
         />
         <StackNav.Screen
-          name="DummyScreen2"
-          component={DummyScreen2}
+          name="ScreenDummy2"
+          component={ScreenDummy2}
           options={{...options, headerShown: false}}
         />
       </StackNav.Navigator>
