@@ -1,5 +1,7 @@
 package com.reactnativeboilerplate;
 
+import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
@@ -11,7 +13,7 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
-public class MainApplication extends Application implements ReactApplication {
+public class MainApplication extends MultiDexApplication implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHost(this) {
@@ -45,6 +47,12 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+  }
+
+  @Override
+  protected void attachBaseContext(Context base) {
+    super.attachBaseContext(base);
+    MultiDex.install(this);
   }
 
   /**
