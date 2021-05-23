@@ -1,5 +1,10 @@
 import React from 'react';
-import {ActivityIndicator, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {
+  ActivityIndicator,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {MTextView} from './MTextView';
 import ColorTheme from '../ColorTheme';
 import FontTheme from '../FontTheme';
